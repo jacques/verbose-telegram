@@ -1,0 +1,30 @@
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:jacques/phoenix.git"
+        }
+    ],
+    "require": {
+        "jacques/phoenix": "dev-master",
+        "phpunit/phpunit": "^7.4",
+        "slim/csrf": "^0.8.2",
+        "slim/slim": "^3.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "TutukaPoc\\": "src/"
+        }
+    },
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Jacques Marneweck",
+            "email": "jacques@powertrip.co.za"
+        }
+    ],
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}
