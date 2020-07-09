@@ -1,0 +1,44 @@
+<?php declare(strict_types=1);
+
+$header = <<<'EOF'
+@author    Jacques Marneweck <jacques@powertrip.co.za>
+@copyright 2020 Jacques Marneweck.  All rights strictly reserved.
+EOF;
+
+$finder = PhpCsFixer\Finder::create()
+    ->in([__DIR__ . '/app', __DIR__ . '/config',  __DIR__ . '/src', __DIR__ . '/tests'])
+;
+
+return PhpCsFixer\Config::create()
+    ->setRules([
+        '@PSR2' => true,
+        '@PhpCsFixer' => true,
+        '@PhpCsFixer:risky' => true,
+        '@PHP56Migration:risky' => true,
+        '@PHPUnit60Migration:risky' => true,
+        'array_syntax' => ['syntax' => 'short'],
+        'binary_operator_spaces' => true,
+        'blank_line_before_return' => true,
+        'blank_line_after_opening_tag' => false,
+        'cast_spaces' => true,
+        'concat_space' => ['spacing' => 'one'],
+        'header_comment' => ['header' => $header],
+        'linebreak_after_opening_tag' =>  false,
+        'no_singleline_whitespace_before_semicolons' => true,
+        'not_operator_with_space' => true,
+        'ordered_imports' => true,
+        'phpdoc_align' => true,
+        'phpdoc_indent' => true,
+        'phpdoc_no_access' => true,
+        'phpdoc_no_alias_tag' => true,
+        'phpdoc_no_package' => true,
+        'phpdoc_scalar' => true,
+        'phpdoc_separation' => true,
+        'phpdoc_summary' => true,
+        'phpdoc_to_comment' => true,
+        'phpdoc_trim' => true,
+        'single_blank_line_at_eof' => true,
+        'ternary_operator_spaces' => true,
+    ])
+    ->setFinder($finder)
+    ;
